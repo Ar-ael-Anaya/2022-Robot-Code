@@ -19,6 +19,8 @@ public class AutonomousSequenceTwo extends SequentialCommandGroup {
   public AutonomousSequenceTwo() {
     addCommands(
     //drive forward while intaking
+    //runs the autonomous drive and the autonomous shoot commands simultaniously
+    //experimental code, untested
     new ParallelRaceGroup(
 
       new AutonomousDrive(Constants.Timings.AutonomousTimings.m_autonomousTimeThreeSeconds, 
@@ -33,6 +35,7 @@ public class AutonomousSequenceTwo extends SequentialCommandGroup {
     )
     ,
       //rotate 180 degrees
+      
       new AutonomousDrive(Constants.Timings.AutonomousTimings.m_autonomousTimeTwoSeconds,
       Constants.MotorSpeeds.AutonomousValues.m_xAutoZero, Constants.MotorSpeeds.AutonomousValues.m_yAutoZero, 
       Constants.MotorSpeeds.AutonomousValues.m_zAutoPosOne )

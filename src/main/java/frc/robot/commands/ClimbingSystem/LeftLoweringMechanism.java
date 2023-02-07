@@ -25,6 +25,8 @@ public class LeftLoweringMechanism extends CommandBase {
   
   @Override
   public void execute() {
+
+    //sets climber motor to predetermined value
     Robot.m_climber.setLeftClimberMotorSpeed(Constants.MotorSpeeds.Climbervalues.m_leftMotorSpeed);
   }
 

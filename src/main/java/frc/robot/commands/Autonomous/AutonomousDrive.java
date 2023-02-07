@@ -27,6 +27,7 @@ public class AutonomousDrive extends CommandBase {
 
   @Override
   public void initialize() {
+    //begins a timer when this command is first turned on
     m_timer.start();
     //Was negative last time Auto worked
     //Robot.m_driveTrain.setMotorSpeed(m_xAxis, m_yAxis, m_zAxis);
@@ -35,6 +36,7 @@ public class AutonomousDrive extends CommandBase {
   @Override
   public void execute() {
     //Was negative last time Auto worked
+    //runs drivetrain at predetermined speed
     Robot.m_driveTrain.setMotorSpeed(m_xAxis, m_yAxis, m_zAxis,0);
   }
 
@@ -45,6 +47,8 @@ public class AutonomousDrive extends CommandBase {
   
   @Override
   public boolean isFinished() {
+
+    //stops drivetrain if timer reaches a certain time.
     if (m_timer.hasElapsed(m_time)){
       Robot.m_driveTrain.setMotorSpeed(0 , 0, 0, 0);
       return true;

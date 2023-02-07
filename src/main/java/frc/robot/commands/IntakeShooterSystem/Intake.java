@@ -24,6 +24,8 @@ public class Intake extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
+
+    //sets intake shooter to  predetermined value when command is ran
     Robot.m_intakeShooter.setIntakeShooterMotorSpeed(Constants.MotorSpeeds.IntakeShooterValues.m_intakeMotorSpeed);
     
   }

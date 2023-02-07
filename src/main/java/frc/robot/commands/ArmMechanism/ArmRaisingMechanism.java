@@ -28,7 +28,7 @@ public class ArmRaisingMechanism extends CommandBase {
 
   @Override
   public void execute() {
- 
+    //sets motor speed to certain value, if button not pressed or limit switch pressed stops it
     Robot.m_arm.setArmMotorSpeed(Constants.MotorSpeeds.ArmValues.m_armRaisingMotorSpeed );
     if (! Robot.m_robotContainer.bButton.getAsBoolean() || Robot.m_arm.checkTopArmLimitSwitch()){
       Robot.m_arm.setArmMotorSpeed(0);

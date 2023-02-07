@@ -8,7 +8,7 @@ package frc.robot.commands.Autonomous;
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.Robot;
-
+//see drive and intake autonomous comments, its all the same thing.
 public class ArmAutonomous extends CommandBase {
   Timer m_timer = new Timer();
   double m_time; 
@@ -29,7 +29,7 @@ public class ArmAutonomous extends CommandBase {
 
   @Override
   public void execute() {
- 
+ //stops arm if timer reaches a certain time.
     Robot.m_arm.setArmMotorSpeed(m_speed );
     if (Robot.m_arm.checkBottomArmLimitSwitch() || Robot.m_arm.checkTopArmLimitSwitch()){
       Robot.m_arm.setArmMotorSpeed(0);

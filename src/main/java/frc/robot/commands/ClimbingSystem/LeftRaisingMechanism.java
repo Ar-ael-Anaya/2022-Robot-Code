@@ -25,8 +25,11 @@ public class LeftRaisingMechanism extends CommandBase {
 
   @Override
   public void execute() {
+
+    //determnined value of left trigger AND multiplies it by limiting factor (making the actual value smaller)
     double leftTrigger = (Robot.m_robotContainer.GetDriverRawAxis(Constants.Controller.Joystick.m_leftTrigger)) * (Constants.m_limiter);
     
+    //sets climber motor to value of left trigger
     Robot.m_climber.setLeftClimberMotorSpeed(leftTrigger);
   }
 

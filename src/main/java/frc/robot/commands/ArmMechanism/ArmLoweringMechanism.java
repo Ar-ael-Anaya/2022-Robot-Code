@@ -27,6 +27,7 @@ public class ArmLoweringMechanism extends CommandBase {
 
   @Override
   public void execute() {
+    //sets motor speed to certain value, if button not pressed or limit switch pressed stops it
       Robot.m_arm.setArmMotorSpeed(Constants.MotorSpeeds.ArmValues.m_armLoweringMotorSpeed);
       if (! Robot.m_robotContainer.xButton.getAsBoolean() || Robot.m_arm.checkBottomArmLimitSwitch()){
         Robot.m_arm.setArmMotorSpeed(0);
@@ -36,6 +37,7 @@ public class ArmLoweringMechanism extends CommandBase {
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
+    //sets arm to predetermined speed
     Robot.m_arm.setArmMotorSpeed(0);
     m_timer.reset();
   }
@@ -43,6 +45,7 @@ public class ArmLoweringMechanism extends CommandBase {
   // Returns true when the command should end.
   @Override
   public boolean isFinished() {   
+    //returns false if timer is greater than time, ending command, better version of older autonomous timer finish?
     return m_timer.get() > m_time;
  }
 }

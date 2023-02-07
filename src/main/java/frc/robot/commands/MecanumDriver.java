@@ -19,13 +19,13 @@ public class MecanumDriver extends CommandBase {
 
   @Override
   public void execute() {
-
+//returns the value of the given axis using the get driver raw axis function established in robot.container)
     double leftStickX = (Robot.m_robotContainer.GetDriverRawAxis(Constants.Controller.Joystick.m_leftStickX)) * (Constants.m_limiter);
     double leftStickY = (Robot.m_robotContainer.GetDriverRawAxis(Constants.Controller.Joystick.m_leftStickY)) * (Constants.m_limiter);
     double leftStickZ = (Robot.m_robotContainer.GetDriverRawAxis(Constants.Controller.Joystick.m_rightStickX)) * (Constants.m_limiter);
     
     
- 
+ //uses set motor speed function established in drivetrain to determine the speed of the robot
     Robot.m_driveTrain.setMotorSpeed(leftStickX, leftStickY, leftStickZ, Robot.m_gyro.getGyroAngle());
     
   }

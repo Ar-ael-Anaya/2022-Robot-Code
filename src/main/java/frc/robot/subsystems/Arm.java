@@ -30,6 +30,7 @@ public void setArmMotorSpeed(double axis){
  
 }
 
+//returns the value of the limit switch (if its being pushed or not)
 public boolean checkTopArmLimitSwitch(){
   return  topArmlimitSwitch.get();
 }

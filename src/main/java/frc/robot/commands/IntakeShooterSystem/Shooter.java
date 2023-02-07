@@ -23,8 +23,10 @@ public class Shooter extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    double rightTrigger = (Robot.m_robotContainer.GetDriverRawAxis(Constants.Controller.Joystick.m_rightTrigger));
 
+    //returns value of right trigger
+    double rightTrigger = (Robot.m_robotContainer.GetDriverRawAxis(Constants.Controller.Joystick.m_rightTrigger));
+//sets shooter motor speed to the inverse value of the right trigger (see negative)
     Robot.m_intakeShooter.setIntakeShooterMotorSpeed(-rightTrigger);
    
 
